@@ -1,12 +1,15 @@
 ﻿using Fulfill_RepositoryService.DomainEntities.System;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Fulfill_RepositoryService.DomainEntities
 {
     public class Task: CoreEntity
     {
+       
+        //public Guid TaskId { get; set; }
         public string TaskName { get; set; }
         public string Category { get; set; }
         public List<Label> Labels { get; set; }
@@ -23,8 +26,8 @@ namespace Fulfill_RepositoryService.DomainEntities
         public decimal Progress { get; set; } = 0;
         public DateTime StartDate { get; set; }
         public DateTime DateCompleted { get; set; }
-        public List<Task> SubTasks { get; set; }
-        public List<Attachments> Attachments { get; set; }
+       // public List<Task> SubTasks { get; set; }
+        public List<Attachment> Attachments { get; set; }
 
     }
 

@@ -1,7 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Fulfill_RepositoryService.DomainEntities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal;
+using Microsoft.EntityFrameworkCore.Storage.Internal;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Fulfill_RepositoryService.EntityService
 {
@@ -9,15 +13,20 @@ namespace Fulfill_RepositoryService.EntityService
     {
         private readonly string AppUser = "FulfillService";
 
-        public FulfillContext() : base("name=fulfillConnection")
-        { }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+      
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            Database.SetInitializer<FulfillContext>(null);
-            base.OnModelCreating(modelBuilder);
-   
+            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=fulfill;Integrated Security=True");
         }
+
+
+
+
+        public DbSet<Task> Tasks { get; set; }
+        public DbSet<Attachment> Attachment { get; set; }
+        public DbSet<Label> Labels { get; set; }
+        public DbSet<Priority> Priority { get; set; }
+        public DbSet<Reminder> Reminders { get; set; }
 
 
     }
