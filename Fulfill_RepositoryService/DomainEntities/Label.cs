@@ -12,7 +12,7 @@ namespace Fulfill_RepositoryService.DomainEntities
         public Guid LabelId { get; set; }
 
         public string LabelName { get; set; }
-        public string Description { get; set; }
+       
         //add icon
     }
 }

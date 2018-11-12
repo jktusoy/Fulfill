@@ -10,5 +10,11 @@ namespace Fulfill_RepositoryService.DomainEntities
         public Guid ReminderId { get; set; }
         public string ReminderName { get; set; }
         
+        public bool IsRecurring { get; set; }
+        public bool IsCompleted { get; set; }
+
+        private List<DateTime> Dates { get; set; }
+        //snooze
+
     }
 }

@@ -8,5 +8,6 @@ namespace Fulfill_RepositoryService.DomainEntities
     {
  
         public Guid PriorityId { get; set; }
+        public int Merit { get; set; }
     }
 }
