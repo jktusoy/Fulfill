@@ -13,7 +13,7 @@ namespace Fulfill_RepositoryService.DomainEntities
         public bool IsRecurring { get; set; }
         public bool IsCompleted { get; set; }
 
-        private List<DateTime> Dates { get; set; }
+        private List<Schedule> RemindSchedules { get; set; }
         //snooze
 
     }

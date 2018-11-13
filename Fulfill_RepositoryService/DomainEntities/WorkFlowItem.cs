@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Fulfill_RepositoryService.DomainEntities
 {
-    class WorkFlowItem
+    public class WorkFlowItem
     {
     }
 }
